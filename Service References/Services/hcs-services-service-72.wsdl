@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/services-service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:serv="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/services/" targetNamespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/services-service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="hcs-services-types-7.3.0.1.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/services/" />
+      <xs:import schemaLocation="hcs-basetypes-7.3.0.1.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="base:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:message name="importHMServicesTarifsDataRequest">
+    <wsdl:part name="importHMServicesTarifsDataRequest" element="serv:importHMServicesTarifsRequest" />
+  </wsdl:message>
+  <wsdl:message name="importHMServicesTarifsDataResult">
+    <wsdl:part name="importHMServicesTarifsDataResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="exportHMServicesTarifsDataRequest">
+    <wsdl:part name="exportHMServicesTarifsDataRequest" element="serv:exportHMServicesTarifsRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportHMServicesTarifsDataResult">
+    <wsdl:part name="exportHMServicesTarifsDataResult" element="serv:exportHMServicesTarifsResult" />
+  </wsdl:message>
+  <wsdl:message name="importMSRSODataRequest">
+    <wsdl:part name="importMSRSODataRequest" element="serv:importMSRSORequest" />
+  </wsdl:message>
+  <wsdl:message name="importMSRSODataResult">
+    <wsdl:part name="importMSRSODataResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="exportMSRSODataRequest">
+    <wsdl:part name="exportMSRSODataRequest" element="serv:exportMSRSORequest" />
+  </wsdl:message>
+  <wsdl:message name="exportMSRSODataResult">
+    <wsdl:part name="exportMSRSODataResult" element="serv:exportMSRSOResult" />
+  </wsdl:message>
+  <wsdl:message name="exportWorkingListRequest">
+    <wsdl:part name="exportWorkingListRequest" element="serv:exportWorkingListRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportWorkingListResult">
+    <wsdl:part name="exportWorkingListResult" element="serv:exportWorkingListResult" />
+  </wsdl:message>
+  <wsdl:message name="importWorkingListRequest">
+    <wsdl:part name="importWorkingListRequest" element="serv:importWorkingListRequest" />
+  </wsdl:message>
+  <wsdl:message name="importWorkingListResult">
+    <wsdl:part name="importWorkingListResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="importWorkingPlanRequest">
+    <wsdl:part name="importWorkingPlanRequest" element="serv:importWorkingPlanRequest" />
+  </wsdl:message>
+  <wsdl:message name="importWorkingPlanResult">
+    <wsdl:part name="importWorkingPlanResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="exportWorkingPlanRequest">
+    <wsdl:part name="exportWorkingPlanRequest" element="serv:exportWorkingPlanRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportWorkingPlanResult">
+    <wsdl:part name="exportWorkingPlanResult" element="serv:exportWorkingPlanResult" />
+  </wsdl:message>
+  <wsdl:message name="importCompletedWorksRequest">
+    <wsdl:part name="importCompletedWorksRequest" element="serv:importCompletedWorksRequest" />
+  </wsdl:message>
+  <wsdl:message name="importCompletedWorksResult">
+    <wsdl:part name="importCompletedWorksResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="exportCompletedWorksRequest">
+    <wsdl:part name="exportCompletedWorksRequest" element="serv:exportCompletedWorksRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportCompletedWorksResult">
+    <wsdl:part name="exportCompletedWorksResult" element="serv:exportCompletedWorksResult" />
+  </wsdl:message>
+  <wsdl:portType name="ServicesPortsType">
+    <wsdl:operation name="importHMServicesTarifs">
+      <wsdl:documentation>ВИ_ИПОЧ_УК_ТФ_ИМП. импорт тарифов ЖКУ</wsdl:documentation>
+      <wsdl:input message="tns:importHMServicesTarifsDataRequest" />
+      <wsdl:output message="tns:importHMServicesTarifsDataResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportHMServicesTarifs">
+      <wsdl:documentation>ВИ_ИПОЧ_УК_ТФ_ЭКСП. экспорт тарифов ЖКУ</wsdl:documentation>
+      <wsdl:input message="tns:exportHMServicesTarifsDataRequest" />
+      <wsdl:output message="tns:exportHMServicesTarifsDataResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importMSRSO">
+      <wsdl:documentation>ВИ_ИРАО_КУРСО_ИМП. Импорт КУ по прямым договорам с РСО.</wsdl:documentation>
+      <wsdl:input message="tns:importMSRSODataRequest" />
+      <wsdl:output message="tns:importMSRSODataResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportMSRSO">
+      <wsdl:documentation>ВИ_ИРАО_КУРСО_ЭКСП. Экспорт КУ по прямым договорам с РСО.</wsdl:documentation>
+      <wsdl:input message="tns:exportMSRSODataRequest" />
+      <wsdl:output message="tns:exportMSRSODataResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportWorkingList">
+      <wsdl:documentation>ВИ_ИПФР_ПЕР_ЭКСП. экспорт основных сведений по перечню работ</wsdl:documentation>
+      <wsdl:input message="tns:exportWorkingListRequest" />
+      <wsdl:output message="tns:exportWorkingListResult" />
+      <wsdl:fault name="FaultName" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importWorkingList">
+      <wsdl:documentation>ВИ_ИПФР_ПЕР_ИМП. импорт основных сведений по перечню работ</wsdl:documentation>
+      <wsdl:input message="tns:importWorkingListRequest" />
+      <wsdl:output message="tns:importWorkingListResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importWorkingPlan">
+      <wsdl:documentation>ВИ_ИПФР_ПЛАН_ИМП. импорт актуальных планов по перечню работ/услуг</wsdl:documentation>
+      <wsdl:input message="tns:importWorkingPlanRequest" />
+      <wsdl:output message="tns:importWorkingPlanResult" />
+      <wsdl:fault name="invalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportWorkingPlan">
+      <wsdl:documentation>ВИ_ИПФР_ПЛАН_ЭКСП. экспорт актуальных планов по перечню работ/услуг</wsdl:documentation>
+      <wsdl:input message="tns:exportWorkingPlanRequest" />
+      <wsdl:output message="tns:exportWorkingPlanResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importCompletedWorks">
+      <wsdl:documentation>ВИ_ИПФР_ВЫП_ИМП. импорт сведений о выполненных работах и услугах</wsdl:documentation>
+      <wsdl:input message="tns:importCompletedWorksRequest" />
+      <wsdl:output message="tns:importCompletedWorksResult" />
+      <wsdl:fault name="FaultName" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportCompletedWorks">
+      <wsdl:documentation>ВИ_ИПФР_ВЫП_ЭКСП. экспорт сведений о выполненных работах и услугах</wsdl:documentation>
+      <wsdl:input message="tns:exportCompletedWorksRequest" />
+      <wsdl:output message="tns:exportCompletedWorksResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicesBinding" type="tns:ServicesPortsType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="importHMServicesTarifs">
+      <soap:operation soapAction="urn:importHMServicesTarifs" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportHMServicesTarifs">
+      <soap:operation soapAction="urn:exportHMServicesTarifs" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importMSRSO">
+      <soap:operation soapAction="urn:importMSRSO" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportMSRSO">
+      <soap:operation soapAction="urn:exportMSRSO" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportWorkingList">
+      <soap:operation soapAction="urn:exportWorkingList" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultName">
+        <soap:fault use="literal" name="FaultName" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importWorkingList">
+      <soap:operation soapAction="urn:importWorkingList" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importWorkingPlan">
+      <soap:operation soapAction="urn:importWorkingPlan" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="invalidRequest">
+        <soap:fault use="literal" name="invalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportWorkingPlan">
+      <soap:operation soapAction="urn:exportWorkingPlan" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importCompletedWorks">
+      <soap:operation soapAction="urn:importCompletedWorks" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultName">
+        <soap:fault use="literal" name="FaultName" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportCompletedWorks">
+      <soap:operation soapAction="urn:exportCompletedWorks" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicesService">
+    <wsdl:port name="defaultPort" binding="tns:ServicesBinding">
+      <soap:address location="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/services-service/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

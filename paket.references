@@ -1,0 +1,16 @@
+AutoMapper
+Bars.B4.Modules.Dapper
+Bars.B4.Modules.DataExport
+Bars.B4.Modules.FIAS
+Bars.B4.Modules.Messenger
+Bars.B4.Modules.ReportPanel
+Bars.B4.Modules.States
+Bars.B4.Modules.StimulReportGenerator
+CryptoPro.Sharpei.Base
+CryptoPro.Sharpei.ServiceModel
+DotNetZip
+ImportKP50Data
+Microsoft.AspNet.SignalR
+RabbitMQ.Client
+raven-csharp
+raven-csharp-protocol20

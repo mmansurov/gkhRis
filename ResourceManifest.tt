@@ -1,0 +1,55 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ Assembly Name="System.Core.dll" #>
+<#@ Assembly Name="System.Xml.dll" #>
+<#@ Assembly Name="System.Xml.Linq.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<# 
+    string nameSpace = "Bars.Gkh.Ris";	
+#>
+namespace <#= nameSpace #>
+{    
+    using Bars.B4;
+
+    public partial class ResourceManifest : ResourceManifestBase
+    {
+
+		protected override void BaseInit(IResourceManifestContainer container)
+        {  
+
+<#          GenereateAllResources("libs");#>
+
+<#          GenereateAllResources("content");#>
+        }
+
+        private void AddResource(IResourceManifestContainer container, string path)
+		{
+
+            container.Add(path, string.Format("<#= nameSpace #>.dll/<#= nameSpace #>.{0}", path.Replace("/", ".")));
+        }
+    }
+}
+<#+  
+  void GenereateAllResources(string directoryName) 
+  {
+		string content = Host.ResolvePath(directoryName);
+    			
+        if(!string.IsNullOrEmpty(content))
+        {          
+			foreach(var file in System.IO.Directory.GetFiles(content, "*.*", SearchOption.AllDirectories).Where(x => !x.EndsWith(".orig") && !x.Contains(".idea")))
+			{
+				var resourcePath = string.Format("{0}{1}", directoryName, file.Replace(content, string.Empty).Replace("\\","/"));
+#>
+            AddResource(container, "<#= resourcePath #>");
+<#+          
+			}
+        }
+  }
+
+#>

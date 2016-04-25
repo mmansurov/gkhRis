@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ins="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/inspection/" xmlns:base="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/inspection-service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/inspection-service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="hcs-basetypes-7.3.0.1.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/" />
+      <xs:import schemaLocation="hcs-inspection-types-7.3.0.1.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/inspection/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="importInspectionPlanRequest">
+    <wsdl:part name="importInspectionPlanRequest" element="ins:importInspectionPlanRequest" />
+  </wsdl:message>
+  <wsdl:message name="importInspectionPlanResult">
+    <wsdl:part name="importInspectionPlanResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="exportInspectionPlansRequest">
+    <wsdl:part name="exportInspectionPlansRequest" element="ins:exportInspectionPlansRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportInspectionPlansResult">
+    <wsdl:part name="exportInspectionPlansResult" element="ins:exportInspectionPlansResult" />
+  </wsdl:message>
+  <wsdl:message name="importExaminationsRequest">
+    <wsdl:part name="importExaminationsRequest" element="ins:importExaminationsRequest" />
+  </wsdl:message>
+  <wsdl:message name="importExaminationsResult">
+    <wsdl:part name="importExaminationsResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="exportExaminationsRequest">
+    <wsdl:part name="exportExaminationsRequest" element="ins:exportExaminationsRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportExaminationsResult">
+    <wsdl:part name="exportExaminationsResult" element="ins:exportExaminationsResult" />
+  </wsdl:message>
+  <wsdl:message name="cancelDocumentsResult">
+    <wsdl:part name="cancelDocumentsResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="base:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:portType name="InspectionPortsType">
+    <wsdl:operation name="importInspectionPlan">
+      <wsdl:documentation>ВИ_ПИЖФ_ИПП. Импорт плана проверок.</wsdl:documentation>
+      <wsdl:input message="tns:importInspectionPlanRequest" />
+      <wsdl:output message="tns:importInspectionPlanResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportInspectionPlans">
+      <wsdl:documentation>ВИ_ПИЖФ_ЭПП. Экспорт плана проверок.</wsdl:documentation>
+      <wsdl:input message="tns:exportInspectionPlansRequest" />
+      <wsdl:output message="tns:exportInspectionPlansResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importExaminations">
+      <wsdl:documentation>ВИ_ПИЖФ_ИП. Импорт проверок.</wsdl:documentation>
+      <wsdl:input message="tns:importExaminationsRequest" />
+      <wsdl:output message="tns:importExaminationsResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportExaminations">
+      <wsdl:documentation>ВИ_ПИЖФ_ЭП. Экспорт проверок.</wsdl:documentation>
+      <wsdl:input message="tns:exportExaminationsRequest" />
+      <wsdl:output message="tns:exportExaminationsResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InspectionBinding" type="tns:InspectionPortsType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="importInspectionPlan">
+      <wsdl:documentation>ВИ_ПИЖФ_ИПП. Импорт плана проверок.</wsdl:documentation>
+      <soap:operation soapAction="urn:importInspectionPlan" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportInspectionPlans">
+      <wsdl:documentation>ВИ_ПИЖФ_ЭПП. Экспорт плана проверок.</wsdl:documentation>
+      <soap:operation soapAction="urn:exportInspectionPlans" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importExaminations">
+      <wsdl:documentation>ВИ_ПИЖФ_ИП. Импорт проверок.</wsdl:documentation>
+      <soap:operation soapAction="urn:importExaminations" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportExaminations">
+      <wsdl:documentation>ВИ_ПИЖФ_ЭП. Экспорт проверок.</wsdl:documentation>
+      <soap:operation soapAction="urn:exportExaminations" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InspectionService">
+    <wsdl:documentation>Сервис работы с планами проверок и проверками</wsdl:documentation>
+    <wsdl:port name="InspectionPort" binding="tns:InspectionBinding">
+      <soap:address location="http://dom.gosuslugi.ru/integration/services/Inspection" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

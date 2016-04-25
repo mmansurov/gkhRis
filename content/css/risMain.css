@@ -1,0 +1,100 @@
+﻿/*
+ * Иконки меню ЖКУ дома
+ */
+/*.icon-house-key {
+    background-image: url(../img/icons/house_key.png) !important;
+}
+
+.no-tree-icons .x-tree-icon {
+    display: none !important;
+}
+
+.x-grid-row.font-green-noimportant .x-grid-cell {
+    color: #00AD0E;
+}
+
+.x-grid-row.font-blue-noimportant .x-grid-cell {
+    color: #0094ff;
+}
+
+.x-grid-row.font-darkgray-noimportant .x-grid-cell {
+    color: #A9A9A9;
+}
+
+.x-grid-row.font-tomato-noimportant .x-grid-cell {
+    color: #FF6347;
+}
+
+.x-grid-row.font-green-change-cell .x-change-cell {
+    color: #00AD0E;
+}
+
+.x-grid-row.font-tomato-change-cell .x-change-cell {
+    color: #FF6347;
+}
+
+.x-grid-row.font-color1-noimportant .x-grid-cell {
+    color: #ee4370;
+}
+
+.x-grid-row.font-color2-noimportant .x-grid-cell {
+    color: #11b139;
+}*/
+
+.icon_wand
+{
+    background-image: url(../icon/wand.png) !important;
+}
+
+.icon_wizard
+{
+    background-image: url(../img/wizard.png) !important;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+
+.icon_apply
+{
+    background-image: url(../img/apply.png) !important;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+
+.icon_error
+{
+    background-image: url(../img/error.png) !important;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+
+.icon_warning
+{
+    background-image: url(../img/warning.png) !important;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+
+.icon_cross
+{
+    background-image: url(../icon/cross.png) !important;
+}
+
+.icon_arrow-180
+{
+    background-image: url(../icon/arrow-180.png) !important;
+}
+
+.icon_arrow
+{
+    background-image: url(../icon/arrow.png) !important;
+}
+
+.icon_task
+{
+    background-image: url(../icon/task.png) !important;
+}
+
+.icon_package
+{
+    background-image: url(../../libs/ext/resources/themes/images/default/tree/folder.gif) !important;
+}

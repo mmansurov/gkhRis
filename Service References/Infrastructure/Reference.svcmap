@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aced85f2-fd36-4b17-a527-b4c758ce0045" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\marat.mansurov.BARS\Downloads\ГИС ЖКХ_Интеграция_v.7.3.0.1\7.3.0.1\hcs-infrastructure-service-7.3.0.1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="xmldsig-core-schema1.xsd" MetadataType="Schema" ID="1c557d95-4f64-4cd2-aef6-e169c0a1e30e" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/xmldsig-core-schema.xsd" />
+    <MetadataFile FileName="hcs-infrastructure-types-7.xsd" MetadataType="Schema" ID="812e8e56-3700-4594-a010-853df3a2ca4d" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-infrastructure-types-7.3.0.1.xsd" />
+    <MetadataFile FileName="hcs-basetypes-71.xsd" MetadataType="Schema" ID="e890cda7-fc7f-401d-a1c9-dd726ebb69fc" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-basetypes-7.3.0.1.xsd" />
+    <MetadataFile FileName="hcs-infrastructure-service-72.wsdl" MetadataType="Wsdl" ID="f761824a-09fc-4598-87f3-e713dd6df318" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-infrastructure-service-7.3.0.1.wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

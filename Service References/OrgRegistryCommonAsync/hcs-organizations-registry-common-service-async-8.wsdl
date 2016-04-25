@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry-common-service-async/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ro="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry-common/" xmlns:ns="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry-common-service-async/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="hcs-organizations-registry-common-types-8.6.0.6.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry-common/" />
+      <xs:import schemaLocation="hcs-basetypes-8.6.0.6.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getStateRequest">
+    <wsdl:part name="getStateRequest" element="base:getStateRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStateResult">
+    <wsdl:part name="getStateResult" element="ro:getStateResult" />
+  </wsdl:message>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="exportOrgRegistryRequest">
+    <wsdl:part name="exportOrgRegistryRequest" element="ro:exportOrgRegistryRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportOrgRegistryResult">
+    <wsdl:part name="AckRequest" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISRequestHeader">
+    <wsdl:part name="Header" element="base:ISRequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:message name="importDataProviderRequest">
+    <wsdl:part name="importDataProviderRequest" element="ro:importDataProviderRequest" />
+  </wsdl:message>
+  <wsdl:message name="importDataProviderResult">
+    <wsdl:part name="AckRequest" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportDataProviderRequest">
+    <wsdl:part name="exportDataProviderRequest" element="ro:exportDataProviderRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportDataProviderResult">
+    <wsdl:part name="AckRequest" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:portType name="RegOrgPortsTypeAsync">
+    <wsdl:operation name="getState">
+      <wsdl:input message="tns:getStateRequest" />
+      <wsdl:output message="tns:getStateResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportOrgRegistry">
+      <wsdl:input message="tns:exportOrgRegistryRequest" />
+      <wsdl:output message="tns:exportOrgRegistryResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importDataProvider">
+      <wsdl:documentation>импорт сведений о поставщиках данных</wsdl:documentation>
+      <wsdl:input message="tns:importDataProviderRequest" />
+      <wsdl:output message="tns:importDataProviderResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportDataProvider">
+      <wsdl:documentation>экспорт сведений о поставщиках данных</wsdl:documentation>
+      <wsdl:input message="tns:exportDataProviderRequest" />
+      <wsdl:output message="tns:exportDataProviderResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegOrgBindingAsync" type="tns:RegOrgPortsTypeAsync">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getState">
+      <soap:operation soapAction="urn:getState" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ISRequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportOrgRegistry">
+      <soap:operation soapAction="urn:exportOrgRegistry" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ISRequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importDataProvider">
+      <soap:operation soapAction="urn:importDataProvider" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ISRequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportDataProvider">
+      <soap:operation soapAction="urn:exportDataProvider" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ISRequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RegOrgServiceAsync">
+    <wsdl:port name="RegOrgAsyncPort" binding="tns:RegOrgBindingAsync">
+      <soap:address location="http://dom.gosuslugi.ru/integration/services/RegOrgCommonAsync" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

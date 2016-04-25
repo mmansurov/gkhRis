@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3595ac90-51db-46f9-b7df-a8fbeb45f3df" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\свалка\ГИС ЖКХ_Интеграция_v.8.5.0.4\hcs_wsdl_xsd_v.8.5.0.4\hcs-house-management-service-8.5.0.4.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="hcs-house-management-service-81.wsdl" MetadataType="Wsdl" ID="902e9dbc-943c-4c52-899c-3f9163894186" SourceId="1" SourceUrl="file:///D:/свалка/ГИС ЖКХ_Интеграция_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs-house-management-service-8.5.0.4.wsdl" />
+    <MetadataFile FileName="hcs-basetypes-81.xsd" MetadataType="Schema" ID="4e5ae69b-8b08-421f-8352-495494d427bf" SourceId="1" SourceUrl="file:///D:/свалка/ГИС ЖКХ_Интеграция_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs-basetypes-8.5.0.4.xsd" />
+    <MetadataFile FileName="xmldsig-core-schema1.xsd" MetadataType="Schema" ID="848b96ce-9740-4a92-8b67-9d887aa9d691" SourceId="1" SourceUrl="file:///D:/свалка/ГИС ЖКХ_Интеграция_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/xmldsig-core-schema.xsd" />
+    <MetadataFile FileName="hcs-house-management-types-81.xsd" MetadataType="Schema" ID="bc281f51-37ad-4ed7-a271-22b9579f35a7" SourceId="1" SourceUrl="file:///D:/свалка/ГИС ЖКХ_Интеграция_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs-house-management-types-8.5.0.4.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

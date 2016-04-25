@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/nsi-service-async/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://www.w3.org/2000/09/xmldsig#" xmlns:nsi="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/nsi/" targetNamespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/nsi-service-async/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="hcs-basetypes-8.6.0.6.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/" />
+      <xs:import schemaLocation="hcs-nsi-types-8.6.0.6.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/nsi/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="importAdditionalServicesRequest">
+    <wsdl:part name="importAdditionalServicesRequest" element="nsi:importAdditionalServicesRequest" />
+  </wsdl:message>
+  <wsdl:message name="importAdditionalServicesResult">
+    <wsdl:part name="importAdditionalServicesResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="importMunicipalServicesRequest">
+    <wsdl:part name="importMunicipalServicesRequest" element="nsi:importMunicipalServicesRequest" />
+  </wsdl:message>
+  <wsdl:message name="importMunicipalServicesResult">
+    <wsdl:part name="importMunicipalServicesResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="importOrganizationWorksRequest">
+    <wsdl:part name="importOrganizationWorksRequest" element="nsi:importOrganizationWorksRequest" />
+  </wsdl:message>
+  <wsdl:message name="importOrganizationWorksResult">
+    <wsdl:part name="importOrganizationWorksResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="base:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:message name="getStateRequest">
+    <wsdl:part name="getStateRequest" element="base:getStateRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStateResult">
+    <wsdl:part name="getStateResult" element="nsi:getStateResult" />
+  </wsdl:message>
+  <wsdl:message name="exportDataProviderNsiItemRequest">
+    <wsdl:part name="tns:exportDataProviderNsiItemRequest" element="nsi:exportDataProviderNsiItemRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportDataProviderNsiItemResult">
+    <wsdl:part name="AckRequest" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:portType name="NsiPortsTypeAsync">
+    <wsdl:operation name="importAdditionalServices">
+      <wsdl:documentation>ВИ_НСИ_ИДС_1. Импортировать данные справочника 1 "Дополнительные услуги".</wsdl:documentation>
+      <wsdl:input message="tns:importAdditionalServicesRequest" />
+      <wsdl:output message="tns:importAdditionalServicesResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importMunicipalServices">
+      <wsdl:documentation>ВИ_НСИ_ИДС_51. Импортировать данные справочника 51 "Коммунальные услуги".</wsdl:documentation>
+      <wsdl:input message="tns:importMunicipalServicesRequest" />
+      <wsdl:output message="tns:importMunicipalServicesResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importOrganizationWorks">
+      <wsdl:documentation>ВИ_НСИ_ИДС_59. Импортировать данные справочника 59 "Работы и услуги организации".</wsdl:documentation>
+      <wsdl:input message="tns:importOrganizationWorksRequest" />
+      <wsdl:output message="tns:importOrganizationWorksResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="getState">
+      <wsdl:input message="tns:getStateRequest" />
+      <wsdl:output message="tns:getStateResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportDataProviderNsiItem">
+      <wsdl:documentation>Экспортировать данные справочников поставщика информации  (1,51,59)</wsdl:documentation>
+      <wsdl:input message="tns:exportDataProviderNsiItemRequest" />
+      <wsdl:output message="tns:exportDataProviderNsiItemResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NsiBindingAsync" type="tns:NsiPortsTypeAsync">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="importAdditionalServices">
+      <wsdl:documentation>ВИ_НСИ_ИДС_1. Импортировать данные справочника 1 "Дополнительные услуги".</wsdl:documentation>
+      <soap:operation soapAction="urn:importAdditionalServices" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importMunicipalServices">
+      <wsdl:documentation>ВИ_НСИ_ИДС_51. Импортировать данные справочника 51 "Коммунальные услуги".</wsdl:documentation>
+      <soap:operation soapAction="urn:importMunicipalServices" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importOrganizationWorks">
+      <wsdl:documentation>ВИ_НСИ_ИДС_59. Импортировать данные справочника 59 "Работы и услуги организации".</wsdl:documentation>
+      <soap:operation soapAction="urn:importOrganizationWorks" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getState">
+      <soap:operation soapAction="urn:getState" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportDataProviderNsiItem">
+      <soap:operation soapAction="urn:exportDataProviderNsiItem" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NsiServiceAsync">
+    <wsdl:documentation>Асинхронный сервис экспорта общих справочников подсистемы НСИ</wsdl:documentation>
+    <wsdl:port name="NsiPortAsync" binding="tns:NsiBindingAsync">
+      <soap:address location="http://dom.gosuslugi.ru/integration/services/NsiCommonAsync" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

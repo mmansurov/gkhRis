@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.5.0.4/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/8.5.0.4/payment-service-async/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pm="http://dom.gosuslugi.ru/schema/integration/8.5.0.4/payment/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://dom.gosuslugi.ru/schema/integration/8.5.0.4/payment-service-async/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="hcs-payment-types-8.5.0.4.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.5.0.4/payment/" />
+      <xs:import schemaLocation="hcs-basetypes-8.5.0.4.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.5.0.4/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="importNotificationsOfOrderExecutionRequest">
+    <wsdl:part name="importNotificationsOfOrderExecutionRequest" element="pm:importNotificationsOfOrderExecutionRequest" />
+  </wsdl:message>
+  <wsdl:message name="AckRequest">
+    <wsdl:part name="AckRequest" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportNotificationsOfOrderExecutionRequest">
+    <wsdl:part name="exportNotificationsOfOrderExecutionRequest" element="pm:exportNotificationsOfOrderExecutionRequest" />
+  </wsdl:message>
+  <wsdl:message name="importAcknowledgmentRequest">
+    <wsdl:part name="importAcknowledgmentRequest" element="pm:importAcknowledgmentRequest" />
+  </wsdl:message>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="importNotificationsOfOrderExecutionCancellationRequest">
+    <wsdl:part name="importNotificationsOfOrderExecutionCancellationRequest" element="pm:importNotificationsOfOrderExecutionCancellationRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStateRequest">
+    <wsdl:part name="getRequestState" element="base:getStateRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStateResult">
+    <wsdl:part name="getRequestStateResult" element="pm:getStateResult" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="base:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:message name="exportPaymentDocumentDetailsRequest">
+    <wsdl:part name="exportPaymentDocumentDetailsRequest" element="pm:exportPaymentDocumentDetailsRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportPaymentDocumentDetailsResult">
+    <wsdl:part name="exportPaymentDocumentDetailsResult" element="pm:exportPaymentDocumentDetailsResult" />
+  </wsdl:message>
+  <wsdl:message name="NewMessage" />
+  <wsdl:portType name="PaymentPortsTypeAsync">
+    <wsdl:operation name="importNotificationsOfOrderExecution">
+      <wsdl:documentation>ВИ_ОПЛАТА_ИЗВ. Передать перечень документов "Извещение о принятии к исполнению распоряжения"</wsdl:documentation>
+      <wsdl:input message="tns:importNotificationsOfOrderExecutionRequest" />
+      <wsdl:output message="tns:AckRequest" />
+      <wsdl:fault name="FaultName" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importNotificationsOfOrderExecutionCancellation">
+      <wsdl:documentation>ВИ_ ОПЛАТА_ИЗВАН. Импорт документов "Извещение об аннулировании извещения о принятии к исполнению распоряжения"</wsdl:documentation>
+      <wsdl:input message="tns:importNotificationsOfOrderExecutionCancellationRequest" />
+      <wsdl:output message="tns:AckRequest" />
+      <wsdl:fault name="FaultName" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportNotificationsOfOrderExecution">
+      <wsdl:documentation>ВИ_ОПЛАТА_ЭКСКВИТ. Экспорт платежных документов с результатами квитирования</wsdl:documentation>
+      <wsdl:input message="tns:exportNotificationsOfOrderExecutionRequest" />
+      <wsdl:output message="tns:AckRequest" />
+      <wsdl:fault name="FaultName" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importAcknowledgment">
+      <wsdl:documentation>ВИ_ОПЛАТА_ИМКВИТ. Импорт пакета документов "Запрос на квитирование"</wsdl:documentation>
+      <wsdl:input message="tns:importAcknowledgmentRequest" />
+      <wsdl:output message="tns:AckRequest" />
+      <wsdl:fault name="FaultName" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="getState">
+      <wsdl:documentation>Получить статус обработки запроса</wsdl:documentation>
+      <wsdl:input message="tns:getStateRequest" />
+      <wsdl:output message="tns:getStateResult" />
+      <wsdl:fault name="FaultName" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportPaymentDocumentDetails">
+      <wsdl:input message="tns:exportPaymentDocumentDetailsRequest" />
+      <wsdl:output message="tns:AckRequest" />
+      <wsdl:fault name="FaultName" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaymentsBindingAsync" type="tns:PaymentPortsTypeAsync">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="importNotificationsOfOrderExecution">
+      <soap:operation soapAction="urn:importNotificationsOfOrderExecution" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultName">
+        <soap:fault use="literal" name="FaultName" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importNotificationsOfOrderExecutionCancellation">
+      <soap:operation soapAction="urn:importNotificationsOfOrderExecutionCancellation" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultName">
+        <soap:fault use="literal" name="FaultName" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportNotificationsOfOrderExecution">
+      <soap:operation soapAction="urn:exportNotificationsOfOrderExecution" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultName">
+        <soap:fault use="literal" name="FaultName" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importAcknowledgment">
+      <soap:operation soapAction="urn:importAcknowledgment" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultName">
+        <soap:fault use="literal" name="FaultName" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getState">
+      <soap:operation soapAction="urn:getState" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultName">
+        <soap:fault use="literal" name="FaultName" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportPaymentDocumentDetails">
+      <soap:operation soapAction="urn:exportPaymentDocumentDetails" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FaultName">
+        <soap:fault use="literal" name="FaultName" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaymentsServiceAsync">
+    <wsdl:port name="PaymentPortAsync" binding="tns:PaymentsBindingAsync">
+      <soap:address location="http://dom.gosuslugi.ru/integration/services/PaymentsAsync" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08A1A721-54F9-42F1-B461-5330230CA921}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bars.Gkh.Ris</RootNamespace>
+    <AssemblyName>Bars.Gkh.Ris</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Quartz, Version=2.3.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Quartz\lib\net40\Quartz.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ClientRouteMapRegistrar.cs" />
+    <Compile Include="ConfigSections\GisIntegrationConfig.cs" />
+    <Compile Include="Controllers\GisIntegrationController.cs" />
+    <Compile Include="Controllers\HouseManagementController.cs" />
+    <Compile Include="Controllers\NsiController.cs" />
+    <Compile Include="Controllers\RisSettingsController.cs" />
+    <Compile Include="Controllers\TaskTreeController.cs" />
+    <Compile Include="DomainService\GisIntegration\IGisIntegrationService.cs" />
+    <Compile Include="DomainService\GisIntegration\IHouseManagementService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\GisIntegrationService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\HouseManagementService.cs" />
+    <Compile Include="DomainService\GisIntegration\Impl\NsiService.cs" />
+    <Compile Include="DomainService\GisIntegration\INsiService.cs" />
+    <Compile Include="Entities\BaseRisEntity.cs" />
+    <Compile Include="Entities\Bills\OrgPaymentPeriod.cs" />
+    <Compile Include="Entities\DeviceMetering\RisMeteringDeviceControlValue.cs" />
+    <Compile Include="Entities\DeviceMetering\RisMeteringDeviceCurrentValue.cs" />
+    <Compile Include="Entities\DeviceMetering\RisMeteringDeviceVerificationValue.cs" />
+    <Compile Include="Entities\GisIntegration\GisDict.cs" />
+    <Compile Include="Entities\GisIntegration\GisLog.cs" />
+    <Compile Include="Entities\Bills\RisAdditionalServiceExtChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisHousingServiceChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisAdditionalServiceChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisAddressInfo.cs" />
+    <Compile Include="Entities\Bills\BaseRisChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisMunicipalServiceChargeInfo.cs" />
+    <Compile Include="Entities\Bills\RisPaymentDocument.cs" />
+    <Compile Include="Entities\Bills\RisPaymentInformation.cs" />
+    <Compile Include="Entities\Bills\RisTechService.cs" />
+    <Compile Include="Entities\HouseManagement\AddService.cs" />
+    <Compile Include="Entities\HouseManagement\Charter.cs" />
+    <Compile Include="Entities\HouseManagement\ConfirmDoc.cs" />
+    <Compile Include="Entities\HouseManagement\ContractObject.cs" />
+    <Compile Include="Entities\HouseManagement\HouseManService.cs" />
+    <Compile Include="Entities\HouseManagement\RisAccount.cs" />
+    <Compile Include="Entities\HouseManagement\RisAgreement.cs" />
+    <Compile Include="Entities\HouseManagement\RisContract.cs" />
+    <Compile Include="Entities\HouseManagement\RisContractAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\RisEcnbr.cs" />
+    <Compile Include="Entities\HouseManagement\RisEcnbrInd.cs" />
+    <Compile Include="Entities\HouseManagement\RisHouseInnerWallMaterial.cs" />
+    <Compile Include="Entities\HouseManagement\ProtocolMeetingOwner.cs" />
+    <Compile Include="Entities\HouseManagement\RisEntrance.cs" />
+    <Compile Include="Entities\HouseManagement\RisHouse.cs" />
+    <Compile Include="Entities\HouseManagement\LivingRoom.cs" />
+    <Compile Include="Entities\HouseManagement\NonResidentialPremises.cs" />
+    <Compile Include="Entities\HouseManagement\ResidentialPremises.cs" />
+    <Compile Include="Entities\HouseManagement\RisInd.cs" />
+    <Compile Include="Entities\HouseManagement\RisMeteringDeviceAccount.cs" />
+    <Compile Include="Entities\HouseManagement\RisMeteringDeviceData.cs" />
+    <Compile Include="Entities\HouseManagement\RisMeteringDeviceLivingRoom.cs" />
+    <Compile Include="Entities\HouseManagement\RisNotification.cs" />
+    <Compile Include="Entities\HouseManagement\RisNotificationAddressee.cs" />
+    <Compile Include="Entities\HouseManagement\RisNotificationAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\RisPublicPropertyContract.cs" />
+    <Compile Include="Entities\HouseManagement\RisShare.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareEncbrLivingHouse.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareEncbrLivingRoom.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareEncbrNonResPrem.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareEncbrResidentialPremises.cs" />
+    <Compile Include="Entities\HouseManagement\RisShareInd.cs" />
+    <Compile Include="Entities\HouseManagement\RisDecisionList.cs" />
+    <Compile Include="Entities\HouseManagement\RisTrustDocAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\RisVoteInitiators.cs" />
+    <Compile Include="Entities\HouseManagement\RisVotingProtocol.cs" />
+    <Compile Include="Entities\HouseManagement\RisVotingProtocolAttachment.cs" />
+    <Compile Include="Entities\HouseManagement\RisProtocolOK.cs" />
+    <Compile Include="Entities\Infrastructure\RisAttachmentsEnergyEfficiency.cs" />
+    <Compile Include="Entities\Infrastructure\RisNetPieces.cs" />
+    <Compile Include="Entities\Infrastructure\RisReceiverOki.cs" />
+    <Compile Include="Entities\Infrastructure\RisResource.cs" />
+    <Compile Include="Entities\Infrastructure\RisRkiAttachment.cs" />
+    <Compile Include="Entities\Infrastructure\RisRkiItem.cs" />
+    <Compile Include="Entities\Infrastructure\RisSourceOki.cs" />
+    <Compile Include="Entities\Infrastructure\RisTransportationResources.cs" />
+    <Compile Include="Entities\Inspection\Examination.cs" />
+    <Compile Include="Entities\Inspection\InspectionPlan.cs" />
+    <Compile Include="Entities\GisIntegration\Ref\GisDictRef.cs" />
+    <Compile Include="Entities\Inspection\Offence.cs" />
+    <Compile Include="Entities\IUserEntity.cs" />
+    <Compile Include="Entities\Nsi\RisAdditionalService.cs" />
+    <Compile Include="Entities\Nsi\RisMunicipalService.cs" />
+    <Compile Include="Entities\Nsi\ServiceType.cs" />
+    <Compile Include="Entities\OrgRegistry\RisSubsidiary.cs" />
+    <Compile Include="Entities\Payment\NotificationOfOrderExecution.cs" />
+    <Compile Include="Entities\Payment\RisAcknowledgment.cs" />
+    <Compile Include="Entities\RisConfigParam.cs" />
+    <Compile Include="Entities\RisContainer.cs" />
+    <Compile Include="Entities\RisContragent.cs" />
+    <Compile Include="Entities\Inspection\Precept.cs" />
+    <Compile Include="Entities\Attachment.cs" />
+    <Compile Include="Entities\RisPackage.cs" />
+    <Compile Include="Entities\RisSettings.cs" />
+    <Compile Include="Entities\RisTask.cs" />
+    <Compile Include="Entities\RisTaskPackage.cs" />
+    <Compile Include="Entities\Services\RisHouseService.cs" />
+    <Compile Include="Entities\Services\WorkingListAttachment.cs" />
+    <Compile Include="Entities\Services\WorkList.cs" />
+    <Compile Include="Entities\Services\WorkListItem.cs" />
+    <Compile Include="Enums\AllTypesContractManOrg.cs" />
+    <Compile Include="Enums\CheckForm.cs" />
+    <Compile Include="Enums\ConditionHouse.cs" />
+    <Compile Include="Enums\DataSendingState.cs" />
+    <Compile Include="Enums\DocumentTypeByResult.cs" />
+    <Compile Include="Enums\FileStorageName.cs" />
+    <Compile Include="Enums\Bills\PaymentDocumentState.cs" />
+    <Compile Include="Enums\HouseManagement\DeviceType.cs" />
+    <Compile Include="Enums\HouseManagement\MeteringDeviceType.cs" />
+    <Compile Include="Enums\HouseManagement\Position.cs" />
+    <Compile Include="Enums\HouseManagement\PremisesCharacteristic.cs" />
+    <Compile Include="Enums\HouseManagement\Purpose.cs" />
+    <Compile Include="Enums\HouseManagement\RisContractObjectStatus.cs" />
+    <Compile Include="Enums\HouseManagement\RisContractOwnersType.cs" />
+    <Compile Include="Enums\HouseManagement\RisVotingTimeType.cs" />
+    <Compile Include="Enums\HouseManagement\RisVotingResume.cs" />
+    <Compile Include="Enums\HouseManagement\RisVotingType.cs" />
+    <Compile Include="Enums\HouseManagement\RisAccountType.cs" />
+    <Compile Include="Enums\HouseManagement\RisMeetingEligibility.cs" />
+    <Compile Include="Enums\HouseManagement\RoomsNum.cs" />
+    <Compile Include="Enums\IntegrationService.cs" />
+    <Compile Include="Enums\ObjectProcessingState.cs" />
+    <Compile Include="Enums\ObjectValidateState.cs" />
+    <Compile Include="Enums\PackageProcessingState.cs" />
+    <Compile Include="Enums\RisEntityOperation.cs" />
+    <Compile Include="Enums\RisPaymentPeriodType.cs" />
+    <Compile Include="Enums\RisGender.cs" />
+    <Compile Include="Enums\HouseManagement\HouseState.cs" />
+    <Compile Include="Enums\HouseType.cs" />
+    <Compile Include="Enums\TaskState.cs" />
+    <Compile Include="Enums\TypeBaseCheckJurPerson.cs" />
+    <Compile Include="ExecutionAction\GisIntegrationConfigCreateAction.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\GisIntegrationConfigExtension.cs" />
+    <Compile Include="Extensions\XmlExtensions.cs" />
+    <Compile Include="GisServiceProvider\BaseGisServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Bills\BillsAsyncServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\DeviceMetering\DeviceMeteringServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\HouseManagement\HouseManagementServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\IGisServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Infrastructure\InfrastructureServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Inspection\InspectionServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Nsi\NsiServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\OrgRegistryCommon\OrgRegistryCommonServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\OrgRegistry\OrgRegistryServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Payment\PaymentServiceProvider.cs" />
+    <Compile Include="GisServiceProvider\Services\ServicesServiceProvider.cs" />
+    <Compile Include="Integration\BaseDataExporter.cs" />
+    <Compile Include="Integration\BaseDataExtractor.cs" />
+    <Compile Include="Integration\Bills\Methods\OpenOrgPaymentPeriodMethod.cs" />
+    <Compile Include="Integration\DeviceMetering\GisIntegrationDeviceMeteringMethod.cs" />
+    <Compile Include="Integration\DeviceMetering\Methods\ImportMeteringDeviceControlValuesMethod.cs" />
+    <Compile Include="Integration\DeviceMetering\Methods\ImportMeteringDeviceCurrentValuesMethod.cs" />
+    <Compile Include="Integration\DeviceMetering\Methods\ImportMeteringDeviceVerificationValueMethod.cs" />
+    <Compile Include="Integration\DataSendingResult.cs" />
+    <Compile Include="Integration\FileService\IFileUploadService.cs" />
+    <Compile Include="Integration\FileService\Impl\FileUploadService.cs" />
+    <Compile Include="Integration\GisIntegrationDataExtractorBase.cs" />
+    <Compile Include="Integration\GisIntegrationMethodBase.cs" />
+    <Compile Include="Integration\Bills\GisIntegrationBillsMethod.cs" />
+    <Compile Include="Integration\Bills\Methods\ImportPaymentDocumentMethod.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\CharterDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ContractDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\EntranceDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ImportPublicPropertyContractDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ImportVotingProtocolDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\NonResidentialPremisesDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\ResidentialPremisesDataExtractor.cs.cs" />
+    <Compile Include="Integration\HouseManagement\DataExtractors\RisHouseDataExtractor.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\BaseHouseDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\CharterDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\ContractDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseOMSDataExporter.ApartmentHouse.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseOMSDataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseOMSDataExporter.LivingHouse.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseRSODataExporter.ApartmentHouse.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseRSODataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseRSODataExporter.LivingHouse.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseUODataExporter.ApartmentHouse.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseUODataExporter.cs" />
+    <Compile Include="Integration\HouseManagement\Exporters\HouseUODataExporter.LivingHouse.cs" />
+    <Compile Include="Integration\HouseManagement\GisIntegrationHouseManagementMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportCharterDataMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportAccountDataMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportHouseBaseMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportHouseOMSMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportContractDataMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportHouseRSODataMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportHouseUODataMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportMeteringDeviceDataMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportNotificationDataMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportPublicPropertyContractMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportShareEncbrDataMethod.cs" />
+    <Compile Include="Integration\HouseManagement\Methods\ImportVotingProtocolMethod.cs" />
+    <Compile Include="Integration\IDataExporter.cs" />
+    <Compile Include="Integration\IDataExtractor.cs" />
+    <Compile Include="Integration\IGisIntegrationDataExtractor.cs" />
+    <Compile Include="Integration\IGisIntegrationMethod.cs" />
+    <Compile Include="Integration\Infrastructure\GisIntegrationInfrastructureMethod.cs" />
+    <Compile Include="Integration\Infrastructure\Methods\ImportOkiMethod.cs" />
+    <Compile Include="Integration\Inspection\GisIntegrationInspectionMethod.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\ImportExaminationsDataExtractor.cs" />
+    <Compile Include="Integration\Inspection\DataExtractors\ImportInspectionPlanDataExtractor.cs" />
+    <Compile Include="Integration\Inspection\Methods\ImportExaminationsMethod.cs" />
+    <Compile Include="Integration\Inspection\Methods\ImportInspectionPlanMethod.cs" />
+    <Compile Include="Integration\Nsi\DataExtractors\AdditionalServicesDataExtractor.cs" />
+    <Compile Include="Integration\Nsi\DataExtractors\ImportMunicipalServiceDataExtractor.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\BaseDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\CheckFormDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\ContractBaseDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\PositionDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\PremisesCharacteristicDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\PurposeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\RoomsNumDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\KindCheckDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\ConditionHouseDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\HouseStateDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\HouseManagement\ProjectTypeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\MunicipalResourceDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\MunicipalServiceDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\Services\ServiceTypeDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\TypeBaseCheckJurPersonDictAction.cs" />
+    <Compile Include="Integration\Nsi\DictionaryAction\TypeContractManOrgDictAction.cs" />
+    <Compile Include="Integration\Nsi\Exporters\AdditionalServicesExporter.cs" />
+    <Compile Include="Integration\Nsi\GisIntegrationNsiMethod.cs" />
+    <Compile Include="Integration\Nsi\IGisIntegrDictAction.cs" />
+    <Compile Include="Integration\Nsi\Methods\ImportMunicipalServiceMethod.cs" />
+    <Compile Include="Integration\OrgRegistry\GisIntegrationOrgRegistryMethod.cs" />
+    <Compile Include="Integration\OrgRegistry\Methods\ImportSubsidiaryMethod.cs" />
+    <Compile Include="Integration\OrgRegistryCommon\Exporters\DataProviderExporter.cs" />
+    <Compile Include="Integration\OrgRegistryCommon\Methods\ExportOrgRegistryMethod.cs" />
+    <Compile Include="Integration\Bills\Exporters\AcknowledgmentExporter.cs" />
+    <Compile Include="Integration\PackageSendingResult.cs" />
+    <Compile Include="Integration\Payment\GisIntegrationPaymentAsyncMethod.cs" />
+    <Compile Include="Integration\Payment\Methods\ImportAcknowledgmentMethod.cs" />
+    <Compile Include="Integration\Payment\Methods\ImportNotificationsOfOrderExecutionMethod.cs" />
+    <Compile Include="Integration\PrepareDataResult.cs" />
+    <Compile Include="Integration\Services\DataExtractors\ImportMSRSODataExtractor.cs" />
+    <Compile Include="Integration\Services\DataExtractors\ImportWorkingListDataExtractor.cs" />
+    <Compile Include="Integration\Services\GisIntegrationServicesMethod.cs" />
+    <Compile Include="Integration\Services\Methods\ImportMSRSOMethod.cs" />
+    <Compile Include="Integration\Services\Methods\ImportWorkingListMethod.cs" />
+    <Compile Include="Integration\Signature\GisIntegrationClientMessageInspector.cs" />
+    <Compile Include="Integration\Signature\XadesSign.cs" />
+    <Compile Include="Integration\ValidateObjectResult.cs" />
+    <Compile Include="Interceptors\GisIntegration\GisDictInterceptor.cs" />
+    <EmbeddedResource Include="libs\B4\model\TaskTreeNode.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\TaskTreeStore.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\TaskTree.js" />
+    <Compile Include="Interceptors\UserEntityInterceptor.cs" />
+    <Compile Include="Map\BaseRisEntityMap.cs" />
+    <Compile Include="Map\Bills\OrgPaymentPeriodMap.cs" />
+    <Compile Include="Map\DeviceMetering\RisMeteringDeviceControlValueMap.cs" />
+    <Compile Include="Map\DeviceMetering\RisMeteringDeviceCurrentValueMap.cs" />
+    <Compile Include="Map\DeviceMetering\RisMeteringDeviceVerificationValueMap.cs" />
+    <Compile Include="Map\GisIntegration\GisDictMap.cs" />
+    <Compile Include="Map\GisIntegration\GisLogMap.cs" />
+    <Compile Include="Map\AttachmentMap.cs" />
+    <Compile Include="Map\Bills\BaseRisChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisAdditionalServiceChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisAdditionalServiceExtChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisAddressInfoMap.cs" />
+    <Compile Include="Map\Bills\RisHousingServiceChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisMunicipalServiceChargeInfoMap.cs" />
+    <Compile Include="Map\Bills\RisPaymentDocumentMap.cs" />
+    <Compile Include="Map\Bills\RisPaymentInformationMap.cs" />
+    <Compile Include="Map\Bills\RisTechServiceMap.cs" />
+    <Compile Include="Map\HouseManagement\AddServiceMap.cs" />
+    <Compile Include="Map\HouseManagement\CharterMap.cs" />
+    <Compile Include="Map\HouseManagement\ConfirmDocMap.cs" />
+    <Compile Include="Map\HouseManagement\ContractObjectMap.cs" />
+    <Compile Include="Map\HouseManagement\HouseManServiceMap.cs" />
+    <Compile Include="Map\HouseManagement\ProtocolMeetingOwnerMap.cs" />
+    <Compile Include="Map\HouseManagement\RisAccountMap.cs" />
+    <Compile Include="Map\HouseManagement\RisAgreementMap.cs" />
+    <Compile Include="Map\HouseManagement\RisContractAttachmentMap.cs" />
+    <Compile Include="Map\HouseManagement\RisContractMap.cs" />
+    <Compile Include="Map\HouseManagement\RisEcnbrIndMap.cs" />
+    <Compile Include="Map\HouseManagement\RisEcnbrMap.cs" />
+    <Compile Include="Map\HouseManagement\RisEntranceMap.cs" />
+    <Compile Include="Map\HouseManagement\RisHouseInnerWallMaterialMap.cs" />
+    <Compile Include="Map\HouseManagement\RisHouseMap.cs" />
+    <Compile Include="Map\HouseManagement\LivingRoomMap.cs" />
+    <Compile Include="Map\HouseManagement\ResidentialPremisesMap.cs" />
+    <Compile Include="Map\HouseManagement\NonResidentialPremisesMap.cs" />
+    <Compile Include="Map\HouseManagement\RisIndMap.cs" />
+    <Compile Include="Map\HouseManagement\RisMeteringDeviceAccountMap.cs" />
+    <Compile Include="Map\HouseManagement\RisMeteringDeviceDataMap.cs" />
+    <Compile Include="Map\HouseManagement\RisMeteringDeviceLivingRoomMap.cs" />
+    <Compile Include="Map\HouseManagement\RisNotificationAddresseeMap.cs" />
+    <Compile Include="Map\HouseManagement\RisProtocolOkMap.cs" />
+    <Compile Include="Map\HouseManagement\RisVoteInitiatorsMap.cs" />
+    <Compile Include="Map\HouseManagement\RisNotificationAttachmentMap.cs" />
+    <Compile Include="Map\HouseManagement\RisNotificationMap.cs" />
+    <Compile Include="Map\HouseManagement\RisPublicPropertyContractMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareEncbrLivingHouseMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareEncbrLivingRoomMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareEncbrNonResPremMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareEncbrResidentialPremisesMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareIndMap.cs" />
+    <Compile Include="Map\HouseManagement\RisVotingProtocolAttachmentMap.cs" />
+    <Compile Include="Map\HouseManagement\RisDecisionListMap.cs" />
+    <Compile Include="Map\HouseManagement\RisVotingProtocolMap.cs" />
+    <Compile Include="Map\HouseManagement\RisShareMap.cs" />
+    <Compile Include="Map\HouseManagement\RisTrustDocAttachmentMap.cs" />
+    <Compile Include="Map\Infrastructure\RisAttachmentsEnergyEfficiencyMap.cs" />
+    <Compile Include="Map\Infrastructure\RisNetPiecesMap.cs" />
+    <Compile Include="Map\Infrastructure\RisReceiverOkiMap.cs" />
+    <Compile Include="Map\Infrastructure\RisResourceMap.cs" />
+    <Compile Include="Map\Infrastructure\RisRkiAttachmentMap.cs" />
+    <Compile Include="Map\Infrastructure\RisRkiItemMap.cs" />
+    <Compile Include="Map\Infrastructure\RisSourceOkiMap.cs" />
+    <Compile Include="Map\Infrastructure\RisTransportationResourcesMap.cs" />
+    <Compile Include="Map\Inspection\ExaminationMap.cs" />
+    <Compile Include="Map\Inspection\InspectionPlanMap.cs" />
+    <Compile Include="Map\GisIntegration\Ref\GisDictRefMap.cs" />
+    <Compile Include="Map\Inspection\OffenceMap.cs" />
+    <Compile Include="Map\Inspection\PreceptMap.cs" />
+    <Compile Include="Map\Nsi\RisAdditionalServiceMap.cs" />
+    <Compile Include="Map\Nsi\RisMunicipalServiceMap.cs" />
+    <Compile Include="Map\Nsi\ServiceTypeMap.cs" />
+    <Compile Include="Map\OrgRegistry\RisSubsidiaryMap.cs" />
+    <Compile Include="Map\Payment\NotificationOfOrderExecutionMap.cs" />
+    <Compile Include="Map\Payment\RisAcknowledgmentMap.cs" />
+    <Compile Include="Map\RisConfigParamMap.cs" />
+    <Compile Include="Map\RisContainerMap.cs" />
+    <Compile Include="Map\RisContragentMap.cs" />
+    <Compile Include="Map\RisPackageMap.cs" />
+    <Compile Include="Map\RisSettingsMap.cs" />
+    <Compile Include="Map\RisTaskMap.cs" />
+    <Compile Include="Map\RisTaskPackageMap.cs" />
+    <Compile Include="Map\Services\RisHouseServiceMap.cs" />
+    <Compile Include="Map\Services\WorkingListAttachmentMap.cs" />
+    <Compile Include="Map\Services\WorkListItemMap.cs" />
+    <Compile Include="Map\Services\WorkListMap.cs" />
+    <Compile Include="Migrations\RisMigrationExtensions.cs" />
+    <Compile Include="Migrations\MigrationInfo.cs" />
+    <Compile Include="Migrations\Version_1\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015083100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015090200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015091000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015101200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015101600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015102800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015103100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015110200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015110700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015110701\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015111000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015111300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015111100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015112300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015112400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015112500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015112600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015120700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015113000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015120400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015120500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015120800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121101\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121200\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015121800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015122300\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015122600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2015122601\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016012600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016020100\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021000\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021001\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021600\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021700\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016021800\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016022400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016022500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016031400\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016031500\UpdateSchema.cs" />
+    <Compile Include="Migrations\Version_2016032900\UpdateSchema.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Module.ResourcePart.cs" />
+    <Compile Include="NavigationProvider.cs" />
+    <Compile Include="ResourceManifest.cs">
+      <DependentUpon>ResourceManifest.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="RisPermissionMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\ModuleAssemblyInfo.cs">
+      <DependentUpon>ModuleAssemblyInfo.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceManifest.Part.cs" />
+    <Compile Include="Service References\BillsAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DeviceMetering\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HouseManagementAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HouseManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\InspectionAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Inspection\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NsiAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NsiCommon\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OrgRegistryAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OrgRegistryCommonAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PaymentAsync\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Infrastructure\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Services\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\BaseExportTask.cs" />
+    <Compile Include="Tasks\HouseManagement\ExportHouseDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\ExportCharterDataTask.cs" />
+    <Compile Include="Tasks\HouseManagement\ExportContractDataTask.cs" />
+    <Compile Include="Tasks\Nsi\ExportAdditionalServicesTask.cs" />
+    <Compile Include="Tasks\ObjectProcessingResult.cs" />
+    <Compile Include="Tasks\OrgRegistryCommon\ExportDataProviderTask.cs" />
+    <Compile Include="Tasks\PackageProcessingResult.cs" />
+    <Compile Include="Tasks\Bills\ExportAcknowledgmentTask.cs" />
+    <Compile Include="ViewModel\GisIntegration\GisDictRefViewModel.cs" />
+    <Compile Include="ViewModel\GisIntegration\GisDictViewModel.cs" />
+    <Compile Include="ViewModel\GisIntegration\GisLogViewModel.cs" />
+    <Compile Include="ViewModel\HouseManagement\RisContractViewModel.cs" />
+    <Compile Include="ViewModel\ITreeViewModel.cs" />
+    <Compile Include="ViewModel\Task\BaseNode.cs" />
+    <Compile Include="ViewModel\Task\TaskTreeNode.cs" />
+    <Compile Include="ViewModel\Task\TaskTreeViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResourceManifest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BillsAsync\hcs-basetypes-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\hcs-bills-service-async-8.wsdl" />
+    <None Include="Service References\BillsAsync\hcs-bills-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillsAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagementAsync\hcs-basetypes-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagementAsync\hcs-house-management-service-async-8.wsdl" />
+    <None Include="Service References\HouseManagementAsync\hcs-house-management-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagementAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagement\hcs-basetypes-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagement\hcs-house-management-service-81.wsdl" />
+    <None Include="Service References\HouseManagement\hcs-house-management-types-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HouseManagement\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InspectionAsync\hcs-inspection-service-async-8.wsdl" />
+    <None Include="Service References\InspectionAsync\hcs-inspection-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InspectionAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.exportDataProviderNsiItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.getStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.importAdditionalServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.importMunicipalServicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.importOrganizationWorksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\Bars.Gkh.Ris.NsiAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiAsync\hcs-basetypes-82.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiAsync\hcs-nsi-service-async-8.wsdl" />
+    <None Include="Service References\NsiAsync\hcs-nsi-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiAsync\xmldsig-core-schema2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.exportNsiItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.exportNsiItemResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.exportNsiListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.exportNsiListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\Bars.Gkh.Ris.NsiCommon.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NsiCommon\hcs-basetypes-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\hcs-nsi-common-service-81.wsdl" />
+    <None Include="Service References\NsiCommon\hcs-nsi-common-types-81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NsiCommon\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="content\icon\wand.png" />
+    <EmbeddedResource Include="content\img\wizard.png" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\ExportWizard.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\WizardBaseStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\WizardFinishStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\WizardStartStepFrame.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\WizardWindow.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\SignatureWindow.js" />
+    <None Include="Service References\DeviceMetering\hcs-basetypes-7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceMetering\hcs-device-metering-service-71.wsdl" />
+    <None Include="Service References\DeviceMetering\hcs-device-metering-types-7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DeviceMetering\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Infrastructure\Bars.Gkh.Ris.Infrastructure.exportOKIResult.datasource" />
+    <None Include="Service References\Infrastructure\Bars.Gkh.Ris.Infrastructure.ImportResult.datasource" />
+    <None Include="Service References\Infrastructure\Bars.Gkh.Ris.Infrastructure.ResultHeader.datasource" />
+    <None Include="Service References\Infrastructure\hcs-basetypes-71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Infrastructure\hcs-infrastructure-service-72.wsdl" />
+    <None Include="Service References\Infrastructure\hcs-infrastructure-types-7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Infrastructure\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Infrastructure\configuration.svcinfo" />
+    <None Include="Service References\Infrastructure\configuration91.svcinfo" />
+    <None Include="Service References\Infrastructure\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Inspection\hcs-basetypes-711.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Inspection\hcs-inspection-service-71.wsdl" />
+    <None Include="Service References\Inspection\hcs-inspection-types-711.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Inspection\xmldsig-core-schema11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\hcs-basetypes-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\hcs-organizations-registry-service-async-8.wsdl" />
+    <None Include="Service References\OrgRegistryAsync\hcs-organizations-registry-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\hcs-basetypes-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\hcs-organizations-registry-common-service-async-8.wsdl" />
+    <None Include="Service References\OrgRegistryCommonAsync\hcs-organizations-registry-common-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OrgRegistryCommonAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\hcs-basetypes-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\hcs-payment-service-async-8.wsdl" />
+    <None Include="Service References\PaymentAsync\hcs-payment-types-8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentAsync\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\Bars.Gkh.Ris.Services.exportCompletedWorksResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\Bars.Gkh.Ris.Services.exportHMServicesTarifsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\Bars.Gkh.Ris.Services.exportMSRSOResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\Bars.Gkh.Ris.Services.exportWorkingListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\Bars.Gkh.Ris.Services.exportWorkingPlanResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\Bars.Gkh.Ris.Services.ImportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\Bars.Gkh.Ris.Services.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Services\hcs-basetypes-71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\hcs-services-service-72.wsdl" />
+    <None Include="Service References\Services\hcs-services-types-71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Services\configuration.svcinfo" />
+    <None Include="Service References\Services\configuration91.svcinfo" />
+    <None Include="Service References\PaymentAsync\Bars.Gkh.Ris.PaymentAsync.AckRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentAsync\Bars.Gkh.Ris.PaymentAsync.getStateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentAsync\Bars.Gkh.Ris.PaymentAsync.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PaymentAsync\configuration.svcinfo" />
+    <None Include="Service References\PaymentAsync\configuration91.svcinfo" />
+    <None Include="Service References\Inspection\Bars.Gkh.Ris.Inspection.exportExaminationsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Inspection\Bars.Gkh.Ris.Inspection.exportInspectionPlansResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Inspection\Bars.Gkh.Ris.Inspection.ImportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Inspection\Bars.Gkh.Ris.Inspection.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Inspection\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Inspection\configuration.svcinfo" />
+    <None Include="Service References\Inspection\configuration91.svcinfo" />
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.exportAccountResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.exportHouseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.exportMeteringDeviceDataResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.exportShareEncbrDataResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.exportStatusCAChResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.exportStatusPublicPropertyContractResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.exportVotingProtocolResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.ImportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.RequestHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Bars.Gkh.Ris.HouseManagement.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HouseManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HouseManagement\configuration.svcinfo" />
+    <None Include="Service References\HouseManagement\configuration91.svcinfo" />
+    <None Include="Service References\DeviceMetering\Bars.Gkh.Ris.DeviceMetering.exportMeteringDeviceHistoryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMetering\Bars.Gkh.Ris.DeviceMetering.ImportResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMetering\Bars.Gkh.Ris.DeviceMetering.ResultHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DeviceMetering\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DeviceMetering\configuration.svcinfo" />
+    <None Include="Service References\DeviceMetering\configuration91.svcinfo" />
+    <EmbeddedResource Include="libs\B4\model\integrations\gis\DataExtractor.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\DataExtractor.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DataExtractorGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\SettingsPanel.js" />
+    <EmbeddedResource Include="libs\B4\controller\integrations\GisIntegrationSettings.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\DictRecordList.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictRefSelectWindow.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\DictList.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictWindow.js" />
+    <EmbeddedResource Include="libs\B4\model\integrations\gis\DictRef.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\DictRef.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictRefGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictRefWindow.js" />
+    <EmbeddedResource Include="libs\B4\model\integrations\gis\Log.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\Log.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\LogGrid.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\Dict.js" />
+    <EmbeddedResource Include="libs\B4\model\integrations\gis\Dict.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\DictGrid.js" />
+    <EmbeddedResource Include="libs\B4\model\integrations\gis\Method.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\gis\Method.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\MethodGrid.js" />
+    <EmbeddedResource Include="libs\B4\view\integrations\gis\Panel.js" />
+    <EmbeddedResource Include="libs\B4\controller\integrations\GisIntegration.js" />
+    <EmbeddedResource Include="content\css\risMain.css" />
+    <None Include="app.config" />
+    <None Include="paket.references">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\ModuleAssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModuleAssemblyInfo.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Services\xmldsig-core-schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bars.Gkh.Overhaul.Tat\Bars.Gkh.Overhaul.Tat.csproj">
+      <Project>{1a8e4c35-c84e-4624-9cb8-1097ce8ab521}</Project>
+      <Name>Bars.Gkh.Overhaul.Tat</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh.Repair\Bars.Gkh.Repair.csproj">
+      <Project>{B7C98BEE-6925-4C1F-A85C-59E0833BEBD1}</Project>
+      <Name>Bars.Gkh.Repair</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh1468\Bars.Gkh1468.csproj">
+      <Project>{7C84DDF0-D582-4542-9030-7A7E3B3844D1}</Project>
+      <Name>Bars.Gkh1468</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhDI\Bars.GkhDI.csproj">
+      <Project>{5BC99FA1-DB04-4830-8D2C-E604F83E0BE7}</Project>
+      <Name>Bars.GkhDI</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhExcel\Bars.GkhExcel.csproj">
+      <Project>{558c303d-115d-4c79-bc89-73dc91a1834f}</Project>
+      <Name>Bars.GkhExcel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhGJI\Bars.GkhGji.csproj">
+      <Project>{0e792744-cc64-41c1-a5f2-3f6e3c00470c}</Project>
+      <Name>Bars.GkhGji</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.GkhTP\Bars.GkhTP.csproj">
+      <Project>{cc0dba5f-57e1-4020-81e4-a33ae462feaa}</Project>
+      <Name>Bars.GkhTP</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Bars.Gkh\Bars.Gkh.csproj">
+      <Project>{2495a42b-7ec1-44d3-b7a7-1f90a2c44c85}</Project>
+      <Name>Bars.Gkh</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Bars.Gkh.Gis\Bars.Gkh.Gis.csproj">
+      <Project>{2a580f94-6628-40b0-8540-45544d710f59}</Project>
+      <Name>Bars.Gkh.Gis</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Bars.Gkh.Quartz.Scheduler\Bars.Gkh.Quartz.Scheduler.csproj">
+      <Project>{a0bcc684-dbb7-4a14-bc94-75a031cc2f8d}</Project>
+      <Name>Bars.Gkh.Quartz.Scheduler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BillsAsync\" />
+    <WCFMetadataStorage Include="Service References\DeviceMetering\" />
+    <WCFMetadataStorage Include="Service References\HouseManagementAsync\" />
+    <WCFMetadataStorage Include="Service References\HouseManagement\" />
+    <WCFMetadataStorage Include="Service References\InspectionAsync\" />
+    <WCFMetadataStorage Include="Service References\Inspection\" />
+    <WCFMetadataStorage Include="Service References\NsiAsync\" />
+    <WCFMetadataStorage Include="Service References\NsiCommon\" />
+    <WCFMetadataStorage Include="Service References\OrgRegistryAsync\" />
+    <WCFMetadataStorage Include="Service References\OrgRegistryCommonAsync\" />
+    <WCFMetadataStorage Include="Service References\PaymentAsync\" />
+    <WCFMetadataStorage Include="Service References\Infrastructure\" />
+    <WCFMetadataStorage Include="Service References\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\icon\arrow-180.png" />
+    <EmbeddedResource Include="content\icon\arrow.png" />
+    <EmbeddedResource Include="content\icon\cross.png" />
+    <EmbeddedResource Include="content\img\apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\img\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HouseManagementAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HouseManagementAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HouseManagementAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InspectionAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InspectionAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InspectionAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\RisPackage.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\RisPackage.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\NotSignedXmlPreviewWin.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\icon\task.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\ServiceModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\SignedXmlPreviewWin.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\RisCertificate.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\RisCertificate.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\cryptopro\xadessigner.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\XmlPreviewStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\ParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\ValidationResultStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\ExporterValidateResult.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\ExporterValidateResult.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillsAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillsAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BillsAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\contractData\ExportContractDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\contractData\ContractDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="content\img\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\Contract.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\Contract.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiCommon\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiCommon\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NsiCommon\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\Charter.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\Charter.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\charterData\CharterDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\charterData\ExportCharterDataWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryCommonAsync\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryCommonAsync\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrgRegistryCommonAsync\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\cryptopro\jsxmlsigner.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\dataprovider\ExportDataProviderWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\dataprovider\ExportDataProviderXmlPreviewStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\houseManagement\House.js" />
+    <EmbeddedResource Include="libs\B4\store\integrations\houseManagement\House.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\houseData\ExportHouseDataWizard.js" />
+    <EmbeddedResource Include="libs\B4\view\wizard\export\houseData\HouseDataParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\additionalservices\ExportAdditionalServicesWizard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\view\wizard\export\additionalservices\AdditionalServicesParametersStepFrame.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\store\integrations\nsi\AdditionalService.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libs\B4\model\integrations\nsi\AdditionalService.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="..\..\.paket\paket.targets" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="AutoMapper.Net4">
+          <HintPath>..\..\packages\AutoMapper\lib\net40\AutoMapper.Net4.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="AutoMapper">
+          <HintPath>..\..\packages\AutoMapper\lib\net40\AutoMapper.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Core">
+          <HintPath>..\..\packages\Bars.B4.Core\lib\net40\Bars.B4.Core.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Dapper">
+          <HintPath>..\..\packages\Bars.B4.Modules.Dapper\lib\net40\Bars.B4.Modules.Dapper.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.DataExport">
+          <HintPath>..\..\packages\Bars.B4.Modules.DataExport\lib\net40\Bars.B4.Modules.DataExport.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Ecm7.Framework">
+          <HintPath>..\..\packages\Bars.B4.Modules.Ecm7.Framework\lib\net40\Bars.B4.Modules.Ecm7.Framework.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.ExtJs">
+          <HintPath>..\..\packages\Bars.B4.Modules.ExtJs\lib\net40\Bars.B4.Modules.ExtJs.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.FIAS">
+          <HintPath>..\..\packages\Bars.B4.Modules.FIAS\lib\net40\Bars.B4.Modules.FIAS.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.FileStorage">
+          <HintPath>..\..\packages\Bars.B4.Modules.FileStorage\lib\net40\Bars.B4.Modules.FileStorage.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Mapping">
+          <HintPath>..\..\packages\Bars.B4.Modules.Mapping\lib\net40\Bars.B4.Modules.Mapping.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Messenger">
+          <HintPath>..\..\packages\Bars.B4.Modules.Messenger\lib\net40\Bars.B4.Modules.Messenger.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.NH">
+          <HintPath>..\..\packages\Bars.B4.Modules.NH\lib\net40\Bars.B4.Modules.NH.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.NH.Migrations">
+          <HintPath>..\..\packages\Bars.B4.Modules.NH.Migrations\lib\net40\Bars.B4.Modules.NH.Migrations.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Pivot">
+          <HintPath>..\..\packages\Bars.B4.Modules.Pivot\lib\net40\Bars.B4.Modules.Pivot.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.ReportPanel">
+          <HintPath>..\..\packages\Bars.B4.Modules.ReportPanel\lib\net40\Bars.B4.Modules.ReportPanel.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Reports">
+          <HintPath>..\..\packages\Bars.B4.Modules.Reports\lib\net40\Bars.B4.Modules.Reports.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security">
+          <HintPath>..\..\packages\Bars.B4.Modules.Security\lib\net40\Bars.B4.Modules.Security.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security.ExtJS4">
+          <HintPath>..\..\packages\Bars.B4.Modules.Security.ExtJS4\lib\net40\Bars.B4.Modules.Security.ExtJS4.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.Security.Web">
+          <HintPath>..\..\packages\Bars.B4.Modules.Security.Web\lib\net40\Bars.B4.Modules.Security.Web.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.States">
+          <HintPath>..\..\packages\Bars.B4.Modules.States\lib\net40\Bars.B4.Modules.States.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.StimulReportGenerator">
+          <HintPath>..\..\packages\Bars.B4.Modules.StimulReportGenerator\lib\net40\Bars.B4.Modules.StimulReportGenerator.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.TaskManager.Contracts">
+          <HintPath>..\..\packages\Bars.B4.Modules.TaskManager.Contracts\lib\net40\Bars.B4.Modules.TaskManager.Contracts.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Modules.UserProfile">
+          <HintPath>..\..\packages\Bars.B4.Modules.UserProfile\lib\net40\Bars.B4.Modules.UserProfile.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Utils">
+          <HintPath>..\..\packages\Bars.B4.Utils\lib\net40\Bars.B4.Utils.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Utils.Web">
+          <HintPath>..\..\packages\Bars.B4.Utils.Web\lib\net40\Bars.B4.Utils.Web.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.B4.Web">
+          <HintPath>..\..\packages\Bars.B4.Web\lib\net40\Bars.B4.Web.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Bars.Security">
+          <HintPath>..\..\packages\Bars.Security\lib\net40\Bars.Security.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Castle.Core">
+          <HintPath>..\..\packages\Castle.Core\lib\net40-client\Castle.Core.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Castle.Core">
+          <HintPath>..\..\packages\Castle.Core\lib\net45\Castle.Core.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Castle.Facilities.WcfIntegration">
+          <HintPath>..\..\packages\Castle.WcfIntegrationFacility\lib\net40\Castle.Facilities.WcfIntegration.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Castle.Facilities.WcfIntegration">
+          <HintPath>..\..\packages\Castle.WcfIntegrationFacility\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Castle.Windsor">
+          <HintPath>..\..\packages\Castle.Windsor\lib\net40\Castle.Windsor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Castle.Windsor">
+          <HintPath>..\..\packages\Castle.Windsor\lib\net45\Castle.Windsor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="CryptoPro.Sharpei.Base">
+          <HintPath>..\..\packages\CryptoPro.Sharpei.Base\lib\net40\CryptoPro.Sharpei.Base.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="CryptoPro.Sharpei.ServiceModel">
+          <HintPath>..\..\packages\CryptoPro.Sharpei.ServiceModel\lib\net40\CryptoPro.Sharpei.ServiceModel.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Dapper">
+          <HintPath>..\..\packages\Dapper\lib\net40\Dapper.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Dapper">
+          <HintPath>..\..\packages\Dapper\lib\net45\Dapper.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="DapperExtensions">
+          <HintPath>..\..\packages\DapperExtensions\lib\net40\DapperExtensions.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Ionic.Zip">
+          <HintPath>..\..\packages\DotNetZip\lib\net20\Ionic.Zip.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="EcmaScript.NET">
+          <HintPath>..\..\packages\EcmaScript.Net\lib\net20\EcmaScript.NET.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Elmah">
+          <HintPath>..\..\packages\elmah.corelibrary\lib\Elmah.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Iesi.Collections">
+          <HintPath>..\..\packages\Iesi.Collections\lib\net40\Iesi.Collections.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="ImportKP50Data">
+          <HintPath>..\..\packages\ImportKP50Data\lib\net40\ImportKP50Data.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.SignalR.Core">
+          <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.SignalR.Owin">
+          <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Owin\lib\net40\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.SignalR.Owin">
+          <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Owin\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+          <HintPath>..\..\packages\Microsoft.AspNet.SignalR.SystemWeb\lib\net40\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+          <HintPath>..\..\packages\Microsoft.AspNet.SignalR.SystemWeb\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Owin.Host.SystemWeb">
+          <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb\lib\net40\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Owin.Host.SystemWeb">
+          <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Web.Infrastructure">
+          <HintPath>..\..\packages\Microsoft.Web.Infrastructure\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="System.Web.Helpers">
+          <HintPath>..\..\packages\Mvc3-Base\lib\System.Web.Helpers.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Mvc">
+          <HintPath>..\..\packages\Mvc3-Base\lib\System.Web.Mvc.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Razor">
+          <HintPath>..\..\packages\Mvc3-Base\lib\System.Web.Razor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.Services">
+          <HintPath>..\..\packages\Mvc3-Base\lib\System.Web.Services.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Deployment">
+          <HintPath>..\..\packages\Mvc3-Base\lib\System.Web.WebPages.Deployment.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Razor">
+          <HintPath>..\..\packages\Mvc3-Base\lib\System.Web.WebPages.Razor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages">
+          <HintPath>..\..\packages\Mvc3-Base\lib\System.Web.WebPages.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web">
+          <HintPath>..\..\packages\Mvc3-Base\lib\System.Web.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\net40\Newtonsoft.Json.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="NHibernate">
+          <HintPath>..\..\packages\NHibernate\lib\net40\NHibernate.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="NLog">
+          <HintPath>..\..\packages\NLog\lib\net40\NLog.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="NLog">
+          <HintPath>..\..\packages\NLog\lib\net45\NLog.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Mono.Security">
+          <HintPath>..\..\packages\Npgsql\lib\net40\Mono.Security.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Npgsql">
+          <HintPath>..\..\packages\Npgsql\lib\net40\Npgsql.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Mono.Security">
+          <HintPath>..\..\packages\Npgsql\lib\net45\Mono.Security.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Npgsql">
+          <HintPath>..\..\packages\Npgsql\lib\net45\Npgsql.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Owin">
+          <HintPath>..\..\packages\Owin\lib\net40\Owin.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="RabbitMQ.Client">
+          <HintPath>..\..\packages\RabbitMQ.Client\lib\net20\RabbitMQ.Client.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="SharpRaven">
+          <HintPath>..\..\packages\raven-csharp\lib\SharpRaven.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="SharpRaven">
+          <HintPath>..\..\packages\raven-csharp-protocol20\lib\SharpRaven.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="Stimulsoft.Base">
+          <HintPath>..\..\packages\StimulReport.Base\lib\net40\Stimulsoft.Base.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Stimulsoft.Report">
+          <HintPath>..\..\packages\StimulReport.Base\lib\net40\Stimulsoft.Report.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Stimulsoft.Base">
+          <HintPath>..\..\packages\StimulReport.Base\lib\net45\Stimulsoft.Base.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Stimulsoft.Report">
+          <HintPath>..\..\packages\StimulReport.Base\lib\net45\Stimulsoft.Report.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Yahoo.Yui.Compressor">
+          <HintPath>..\..\packages\YUICompressor.NET\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+          <Private>False</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+</Project>

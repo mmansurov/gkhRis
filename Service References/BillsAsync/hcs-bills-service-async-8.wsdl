@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.6.0.4/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/8.6.0.4/bills-service-async/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:b="http://dom.gosuslugi.ru/schema/integration/8.6.0.4/bills/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.4/bills-service-async/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="hcs-bills-types-8.6.0.4.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.4/bills/" />
+      <xs:import schemaLocation="hcs-basetypes-8.6.0.4.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.4/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="base:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:message name="getStateRequest">
+    <wsdl:part name="getStateRequest" element="base:getStateRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStateResult">
+    <wsdl:part name="getStateResult" element="b:getStateResult" />
+  </wsdl:message>
+  <wsdl:message name="openOrgPaymentPeriodRequest">
+    <wsdl:part name="openOrgPaymentPeriodRequest" element="b:openOrgPaymentPeriodRequest" />
+  </wsdl:message>
+  <wsdl:message name="openOrgPaymentPeriodResult">
+    <wsdl:part name="openOrgPaymentPeriodResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="closeHousePaymentPeriodRequest">
+    <wsdl:part name="closeHousePaymentPeriodRequest" element="b:closeHousePaymentPeriodRequest" />
+  </wsdl:message>
+  <wsdl:message name="closeHousePaymentPeriodResult">
+    <wsdl:part name="closeHousePaymentPeriodResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="importPaymentDocumentDataRequest">
+    <wsdl:part name="importPaymentDocumentDataRequest" element="b:importPaymentDocumentRequest" />
+  </wsdl:message>
+  <wsdl:message name="importPaymentDocumentDataResult">
+    <wsdl:part name="importPaymentDocumentDataResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportPaymentDocumentDataRequest">
+    <wsdl:part name="exportPaymentDocumentDataRequest" element="b:exportPaymentDocumentRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportPaymentDocumentDataResult">
+    <wsdl:part name="exportPaymentDocumentDataResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportOrgPeriodDataRequest">
+    <wsdl:part name="exportOrgPeriodDataRequest" element="b:exportOrgPeriodRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportOrgPeriodDataResult">
+    <wsdl:part name="exportOrgPeriodDataResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportNotificationsOfOrderExecutionRequest">
+    <wsdl:part name="exportNotificationsOfOrderExecutionRequest" element="b:exportNotificationsOfOrderExecutionRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportNotificationsOfOrderExecutionResult">
+    <wsdl:part name="exportNotificationsOfOrderExecutionResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="NewMessage" />
+  <wsdl:message name="importAcknowledgmentRequest">
+    <wsdl:part name="importAcknowledgmentRequest" element="b:importAcknowledgmentRequest" />
+  </wsdl:message>
+  <wsdl:message name="importAcknowledgmentResult">
+    <wsdl:part name="tns:importAcknowledgmentResult" element="base:AckRequest" />
+  </wsdl:message>
+  <wsdl:message name="NewMessage2" />
+  <wsdl:portType name="BillsPortsTypeAsync">
+    <wsdl:operation name="getState">
+      <wsdl:input message="tns:getStateRequest" />
+      <wsdl:output message="tns:getStateResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="openOrgPaymentPeriod">
+      <wsdl:documentation>ВИ_ИЛС_РПО_ОТК. открыть расчетный период организации</wsdl:documentation>
+      <wsdl:input message="tns:openOrgPaymentPeriodRequest" />
+      <wsdl:output message="tns:openOrgPaymentPeriodResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="closeHousePaymentPeriod">
+      <wsdl:documentation>ВИ_ИЛС_РПД_ЗАК. закрыть расчетный период дома</wsdl:documentation>
+      <wsdl:input message="tns:closeHousePaymentPeriodRequest" />
+      <wsdl:output message="tns:closeHousePaymentPeriodResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importPaymentDocumentData">
+      <wsdl:documentation>ВИ_ИЛС_ПД_ИМП. импорт платежных документов</wsdl:documentation>
+      <wsdl:input message="tns:importPaymentDocumentDataRequest" />
+      <wsdl:output message="tns:importPaymentDocumentDataResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportPaymentDocumentData">
+      <wsdl:documentation>ВИ_ИЛС_ПД_ЭКСП. экспорт платежных документов</wsdl:documentation>
+      <wsdl:input message="tns:exportPaymentDocumentDataRequest" />
+      <wsdl:output message="tns:exportPaymentDocumentDataResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportOrgPeriodData">
+      <wsdl:documentation>ВИ_ИЛС_РПО_ЭКСП. получить расчетные периоды организации</wsdl:documentation>
+      <wsdl:input message="tns:exportOrgPeriodDataRequest" />
+      <wsdl:output message="tns:exportOrgPeriodDataResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportNotificationsOfOrderExecution">
+      <wsdl:documentation>Экспорт изввещений о принятии к исполнению распоряжений с результатами квитирования</wsdl:documentation>
+      <wsdl:input message="tns:exportNotificationsOfOrderExecutionRequest" />
+      <wsdl:output message="tns:exportNotificationsOfOrderExecutionResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importAcknowledgment">
+      <wsdl:documentation>ВИ_ОПЛАТА_ИМКВИТ. Импорт пакета документов "Запрос на квитирование"</wsdl:documentation>
+      <wsdl:input message="tns:importAcknowledgmentRequest" />
+      <wsdl:output message="tns:importAcknowledgmentResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BillsBindingAsync" type="tns:BillsPortsTypeAsync">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getState">
+      <soap:operation soapAction="urn:getState" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="openOrgPaymentPeriod">
+      <soap:operation soapAction="urn:openOrgPaymentPeriod" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="closeHousePaymentPeriod">
+      <soap:operation soapAction="urn:closeHousePaymentPeriod" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importPaymentDocumentData">
+      <soap:operation soapAction="urn:importPaymentDocumentData" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportPaymentDocumentData">
+      <soap:operation soapAction="urn:exportPaymentDocumentData" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportOrgPeriodData">
+      <soap:operation soapAction="urn:exportOrgPeriodData" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportNotificationsOfOrderExecution">
+      <soap:operation soapAction="urn:exportNotificationsOfOrderExecution" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importAcknowledgment">
+      <soap:operation soapAction="urn:importAcknowledgment" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillsServiceAsync">
+    <wsdl:port name="BillsPortAsync" binding="tns:BillsBindingAsync">
+      <soap:address location="http://dom.gosuslugi.ru/integration/services/Bills" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

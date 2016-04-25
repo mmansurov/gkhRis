@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry/" xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="hcs-basetypes-8.6.0.6.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/" />
+  <xs:element name="importSubsidiaryRequest">
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="base:BaseType">
+          <xs:sequence>
+            <xs:element maxOccurs="100" name="Subsidiary">
+              <xs:complexType>
+                <xs:complexContent mixed="false">
+                  <xs:extension base="base:SubsidiaryImportType">
+                    <xs:sequence>
+                      <xs:element ref="base:TransportGUID" />
+                    </xs:sequence>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+    <xs:key name="importShareEncbrDataRequest_TransportGUIDKey">
+      <xs:selector xpath=".//base:TransportGUID" />
+      <xs:field xpath="." />
+    </xs:key>
+  </xs:element>
+  <xs:element name="getStateResult">
+    <xs:annotation>
+      <xs:documentation>?????????????? ?????????????? ?????????????????????????? ??????????????????</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent mixed="false">
+        <xs:extension base="base:BaseAsyncResponseType">
+          <xs:choice minOccurs="0">
+            <xs:element ref="base:ErrorMessage" />
+            <xs:element maxOccurs="unbounded" name="ImportResult" type="base:CommonResultType" />
+          </xs:choice>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

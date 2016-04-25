@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c135801b-a929-4a4d-a803-6b97e3c4c251" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\marat.mansurov.BARS\Downloads\ГИС ЖКХ_Интеграция_v.7.3.0.1\7.3.0.1\hcs-services-service-7.3.0.1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="hcs-services-types-71.xsd" MetadataType="Schema" ID="d07665be-4886-4015-b05a-7cd294c9b4aa" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-services-types-7.3.0.1.xsd" />
+    <MetadataFile FileName="xmldsig-core-schema1.xsd" MetadataType="Schema" ID="71141969-0d95-418b-a80c-57bbdc7c9bfb" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/xmldsig-core-schema.xsd" />
+    <MetadataFile FileName="hcs-services-service-72.wsdl" MetadataType="Wsdl" ID="ee867c39-7b68-4ab4-8595-b1dcb8eb4f18" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-services-service-7.3.0.1.wsdl" />
+    <MetadataFile FileName="hcs-basetypes-71.xsd" MetadataType="Schema" ID="c70a0cd1-d5bd-445e-ba3c-7099247e0b9a" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-basetypes-7.3.0.1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

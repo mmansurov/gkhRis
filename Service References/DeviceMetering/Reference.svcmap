@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5fab5907-5af3-458c-8398-9eb256eff08f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\marat.mansurov.BARS\Downloads\ГИС ЖКХ_Интеграция_v.7.3.0.1\7.3.0.1\hcs-device-metering-service-7.3.0.1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="xmldsig-core-schema.xsd" MetadataType="Schema" ID="b363d695-6f27-426a-b79c-e610a4d036c1" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/xmldsig-core-schema.xsd" />
+    <MetadataFile FileName="hcs-device-metering-service-71.wsdl" MetadataType="Wsdl" ID="f34d8a72-c870-479f-8a1c-c6a650583a09" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-device-metering-service-7.3.0.1.wsdl" />
+    <MetadataFile FileName="hcs-basetypes-7.xsd" MetadataType="Schema" ID="56b5d523-e520-4fc0-82b4-fb15e85daa9f" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-basetypes-7.3.0.1.xsd" />
+    <MetadataFile FileName="hcs-device-metering-types-7.xsd" MetadataType="Schema" ID="62ec61fc-3987-40a2-90e1-d7d208870e34" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.7.3.0.1/7.3.0.1/hcs-device-metering-types-7.3.0.1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

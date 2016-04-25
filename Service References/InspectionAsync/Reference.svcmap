@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d57dbf03-49f5-48a7-a0f7-39113e8d1d51" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\marat.mansurov.BARS\Downloads\ГИС ЖКХ_Интеграция_v.8.5.0.2\hcs_wsdl_xsd_v.8.5.0.2\hcs-inspection-service-async-8.5.0.2.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="xmldsig-core-schema.xsd" MetadataType="Schema" ID="55259051-8f77-4c71-83a8-deea7a4a3e7f" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.8.5.0.2/hcs_wsdl_xsd_v.8.5.0.2/xmldsig-core-schema.xsd" />
+    <MetadataFile FileName="hcs-inspection-types-8.xsd" MetadataType="Schema" ID="750913c4-091f-4782-bf66-29a392915989" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.8.5.0.2/hcs_wsdl_xsd_v.8.5.0.2/hcs-inspection-types-8.5.0.2.xsd" />
+    <MetadataFile FileName="hcs-inspection-service-async-8.wsdl" MetadataType="Wsdl" ID="75c5c5b8-00d1-454d-a66a-962677c3677a" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.8.5.0.2/hcs_wsdl_xsd_v.8.5.0.2/hcs-inspection-service-async-8.5.0.2.wsdl" />
+    <MetadataFile FileName="hcs-basetypes-8.xsd" MetadataType="Schema" ID="b0f206f6-f94f-461e-ad0a-8a19d0d2f196" SourceId="1" SourceUrl="file:///C:/Users/marat.mansurov.BARS/Downloads/ГИС ЖКХ_Интеграция_v.8.5.0.2/hcs_wsdl_xsd_v.8.5.0.2/hcs-basetypes-8.5.0.2.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

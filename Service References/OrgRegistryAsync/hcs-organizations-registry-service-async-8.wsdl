@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry-service-async/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ro="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry/" xmlns:ns="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry-service-async/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="hcs-organizations-registry-types-8.6.0.6.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/organizations-registry/" />
+      <xs:import schemaLocation="hcs-basetypes-8.6.0.6.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getStateRequest">
+    <wsdl:part name="getStateRequest" element="base:getStateRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStateResult">
+    <wsdl:part name="getStateResult" element="ro:getStateResult" />
+  </wsdl:message>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="base:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:message name="importSubsidiaryRequest">
+    <wsdl:part name="importSubsidiaryRequest" element="ro:importSubsidiaryRequest" />
+  </wsdl:message>
+  <wsdl:message name="importSubsidiaryResult">
+    <wsdl:part name="AckRequest" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:portType name="RegOrgPortsTypeAsync">
+    <wsdl:operation name="getState">
+      <wsdl:input message="tns:getStateRequest" />
+      <wsdl:output message="tns:getStateResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="importSubsidiary">
+      <wsdl:input message="tns:importSubsidiaryRequest" />
+      <wsdl:output message="tns:importSubsidiaryResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegOrgBindingAsync" type="tns:RegOrgPortsTypeAsync">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getState">
+      <soap:operation soapAction="urn:getState" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="importSubsidiary">
+      <soap:operation soapAction="urn:importSubsidiary" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RegOrgServiceAsync">
+    <wsdl:port name="RegOrgAsyncPort" binding="tns:RegOrgBindingAsync">
+      <soap:address location="http://dom.gosuslugi.ru/integration/services/RegOrgAsync" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

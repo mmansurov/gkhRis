@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:base="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/infrastructure-service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/infrastructure/" targetNamespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/infrastructure-service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="hcs-infrastructure-types-7.3.0.1.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/infrastructure/" />
+      <xs:import schemaLocation="hcs-basetypes-7.3.0.1.xsd" namespace="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Fault">
+    <wsdl:part name="Fault" element="base:Fault" />
+  </wsdl:message>
+  <wsdl:message name="importOKIRequest">
+    <wsdl:part name="importOKIRequest" element="ns:importOKIRequest" />
+  </wsdl:message>
+  <wsdl:message name="importOKIResult">
+    <wsdl:part name="importOKIResult" element="base:ImportResult" />
+  </wsdl:message>
+  <wsdl:message name="exportOKIRequest">
+    <wsdl:part name="exportOKIRequest" element="ns:exportOKIRequest" />
+  </wsdl:message>
+  <wsdl:message name="exportOKIResult">
+    <wsdl:part name="exportOKIResult" element="ns:exportOKIResult" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="Header" element="base:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResultHeader">
+    <wsdl:part name="Header" element="base:ResultHeader" />
+  </wsdl:message>
+  <wsdl:portType name="InfrastructurePortsType">
+    <wsdl:operation name="importOKI">
+      <wsdl:documentation>Импорт информации об ОКИ</wsdl:documentation>
+      <wsdl:input message="tns:importOKIRequest" />
+      <wsdl:output message="tns:importOKIResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+    <wsdl:operation name="exportOKI">
+      <wsdl:documentation>Экспорт списка ОКИ </wsdl:documentation>
+      <wsdl:input message="tns:exportOKIRequest" />
+      <wsdl:output message="tns:exportOKIResult" />
+      <wsdl:fault name="InvalidRequest" message="tns:Fault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InfrastructureBinding" type="tns:InfrastructurePortsType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="importOKI">
+      <soap:operation soapAction="urn:importOKI" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="exportOKI">
+      <soap:operation soapAction="urn:exportOKI" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="Header" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResultHeader" part="Header" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidRequest">
+        <soap:fault use="literal" name="InvalidRequest" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InfrastructureService">
+    <wsdl:documentation>Сервис управления ОКИ</wsdl:documentation>
+    <wsdl:port name="InfrastructurePort" binding="tns:InfrastructureBinding">
+      <soap:address location="http://dom.gosuslugi.ru/schema/integration/7.3.0.1/infrastructure-service/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

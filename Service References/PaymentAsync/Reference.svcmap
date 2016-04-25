@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d42fb3fc-4cd2-4409-9932-3efbc367212b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\Maria\Downloads\ГИС ЖКХ_Интеграция_v.8.5.0.4\ГИС ЖКХ_Интеграция_v.8.5.0.4\hcs_wsdl_xsd_v.8.5.0.4\hcs_wsdl_xsd_v.8.5.0.4\hcs-payment-service-async-8.5.0.4.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="hcs-payment-service-async-8.wsdl" MetadataType="Wsdl" ID="dea7a55b-f645-4c7d-a164-45c146c88ab4" SourceId="1" SourceUrl="file:///C:/Users/Maria/Downloads/ГИС ЖКХ_Интеграция_v.8.5.0.4/ГИС ЖКХ_Интеграция_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs-payment-service-async-8.5.0.4.wsdl" />
+    <MetadataFile FileName="hcs-payment-types-8.xsd" MetadataType="Schema" ID="69ae0f35-0942-4871-80d6-a127f4a87be3" SourceId="1" SourceUrl="file:///C:/Users/Maria/Downloads/ГИС ЖКХ_Интеграция_v.8.5.0.4/ГИС ЖКХ_Интеграция_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs-payment-types-8.5.0.4.xsd" />
+    <MetadataFile FileName="hcs-basetypes-8.xsd" MetadataType="Schema" ID="a67e0717-440d-4098-abfb-48f2417ee2d8" SourceId="1" SourceUrl="file:///C:/Users/Maria/Downloads/ГИС ЖКХ_Интеграция_v.8.5.0.4/ГИС ЖКХ_Интеграция_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs-basetypes-8.5.0.4.xsd" />
+    <MetadataFile FileName="xmldsig-core-schema.xsd" MetadataType="Schema" ID="a637cc86-0e24-4689-961c-21f2f354d88d" SourceId="1" SourceUrl="file:///C:/Users/Maria/Downloads/ГИС ЖКХ_Интеграция_v.8.5.0.4/ГИС ЖКХ_Интеграция_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/hcs_wsdl_xsd_v.8.5.0.4/xmldsig-core-schema.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
